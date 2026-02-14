@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-deep: #1E1B4B;
+  --color-purple-primary: #6D28D9;
+  --color-purple-light: #A78BFA;
+  --color-purple-soft: #C4B5FD;
+  --color-pink-accent: #F472B6;
+  --color-lavender: #DDD6FE;
+  --font-family-cormorant: var(--font-cormorant), 'Georgia', serif;
+  --font-family-inter: var(--font-inter), 'Helvetica Neue', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-inter);
+  background: #1E1B4B;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Card flip styles */
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Subtle glow pulse for the landing page */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+.glow-orb {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* Divider shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-line {
+  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1B4B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6D28D9;
+  border-radius: 3px;
+}
